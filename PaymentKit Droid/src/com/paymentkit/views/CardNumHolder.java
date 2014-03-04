@@ -49,6 +49,28 @@ public class CardNumHolder extends RelativeLayout {
 		this.mCardNumberEditText.setText(mCardNumberEditText);
 	}
 
+ 	public String getCardNumber() {
+        	if (this.mCardHolder.getCardField().getText() != null) {
+            		return this.mCardHolder.getCardField().getText().toString();
+		}
+        	return null;
+    	}
+
+    	public String getCardExpirationMonth() {
+        	return this.mExpirationEditText.getMonth();
+	}
+
+    	public String getCardExpirationYear() {
+        	return this.mExpirationEditText.getYear();
+    	}
+
+	public String getCardCVV() {
+        	if (this.mCVVEditText.getText() != null) {
+            	return this.mCVVEditText.getText().toString();
+        	}
+        	return null;
+    	}
+    
 	private void setup() {
 		setClipChildren(false);
 		LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
