@@ -68,8 +68,8 @@ public class FieldHolder extends RelativeLayout {
 	}
 
     public String getCardNumber() {
-        if (this.mCardHolder.getCardField() != null) {
-            return this.mCardHolder.getCardField().getEditableText().toString();
+        if (this.mCardHolder.getCardField().getText() != null) {
+            return this.mCardHolder.getCardField().getText().toString();
         }
         return null;
     }
@@ -83,8 +83,8 @@ public class FieldHolder extends RelativeLayout {
     }
 
     public String getCardCVV() {
-        if (this.mCVVEditText.getEditableText() != null) {
-            return this.mCVVEditText.getEditableText().toString();
+        if (this.mCVVEditText.getText() != null) {
+            return this.mCVVEditText.getText().toString();
         }
         return null;
     }
