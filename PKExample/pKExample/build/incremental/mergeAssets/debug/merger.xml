@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="PKExamplePaymentKitDroidUnspecified.aar" >
+        <source path="/Users/Dimillian/Documents/DEV/Android/PaymentKit-Droid/PKExample/pKExample/build/exploded-bundles/PKExamplePaymentKitDroidUnspecified.aar/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/Users/Dimillian/Documents/DEV/Android/PaymentKit-Droid/PKExample/pKExample/src/main/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/Dimillian/Documents/DEV/Android/PaymentKit-Droid/PKExample/pKExample/src/debug/assets" />
+    </dataSet>
+
+</merger>

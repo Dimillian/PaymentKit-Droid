@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <corners android:radius="15px" />
+
+    <stroke
+        android:width="2dp"
+        android:color="@color/stubhub_blue" />
+
+    <solid android:color="@color/half_transparent" />
+
+</shape><!-- From: file:/Users/Dimillian/Documents/DEV/Android/PaymentKit-Droid/PKExample/paymentKitDroid/src/main/res/drawable/toast_background.xml --><!-- From: file:/Users/Dimillian/Documents/DEV/Android/PaymentKit-Droid/PKExample/pKExample/build/exploded-bundles/PKExamplePaymentKitDroidUnspecified.aar/res/drawable/toast_background.xml -->

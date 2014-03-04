@@ -1,0 +1,2 @@
+include ':paymentKitDroid'
+include ':pKExample'
