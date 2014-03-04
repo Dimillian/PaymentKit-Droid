@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true" android:drawable="@color/translucent_black"/>
-    <item android:state_focused="true" android:drawable="@color/translucent_black" />
-    <item android:state_selected="true" android:drawable="@color/translucent_black" />
-    <item android:drawable="@color/transparent"/>
-</selector><!-- From: file:/Users/Dimillian/Documents/DEV/Android/PaymentKit-Droid/PKExample/paymentKitDroid/src/main/res/drawable/checkout_next_btn_bg.xml --><!-- From: file:/Users/Dimillian/Documents/DEV/Android/PaymentKit-Droid/PKExample/pKExample/build/exploded-bundles/PKExamplePaymentKitDroidUnspecified.aar/res/drawable/checkout_next_btn_bg.xml -->
