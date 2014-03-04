@@ -66,7 +66,29 @@ public class FieldHolder extends RelativeLayout {
 		super(context, attrs);
 		setup();
 	}
-		
+
+    public String getCardNumber() {
+        if (this.mCardHolder.getCardField() != null) {
+            return this.mCardHolder.getCardField().getEditableText().toString();
+        }
+        return null;
+    }
+
+    public String getCardExpirationMontg() {
+        return this.mExpirationEditText.getMonth();
+    }
+
+    public String getCardExpirationYear() {
+        return this.mExpirationEditText.getYear();
+    }
+
+    public String getCardCVV() {
+        if (this.mCVVEditText.getEditableText() != null) {
+            return this.mCVVEditText.getEditableText().toString();
+        }
+        return null;
+    }
+
 	/*
 	 * Determines background style of the FieldHolder
 	 */
