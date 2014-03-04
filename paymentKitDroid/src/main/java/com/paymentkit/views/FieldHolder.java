@@ -74,7 +74,7 @@ public class FieldHolder extends RelativeLayout {
         return null;
     }
 
-    public String getCardExpirationMontg() {
+    public String getCardExpirationMonth() {
         return this.mExpirationEditText.getMonth();
     }
 
