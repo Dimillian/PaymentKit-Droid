@@ -8,10 +8,10 @@
         android:layout_gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/card_icon"
-        android:contentDescription="Credit Card Number Field" />
+        android:contentDescription="Credit Card Number Field"/>
 
     <com.paymentkit.views.CardIcon
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="18dp"
         android:id="@+id/card_icon"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
         android:orientation="horizontal"
-        android:layout_marginLeft="55dp">
+        android:layout_marginLeft="52dp">
 
         <com.paymentkit.views.ExpirationEditText
             android:id="@+id/expiration"

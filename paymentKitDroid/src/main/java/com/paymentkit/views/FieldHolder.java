@@ -114,34 +114,6 @@ public class FieldHolder extends RelativeLayout {
 	}
 
 	private void transitionToExtraFields() {
-		// CREATE LAST 4 DIGITS OVERLAY
-		mCardHolder.createOverlay();
-
-		// MOVE CARD NUMBER TO LEFT AND ALPHA OUT
-		AnimatorSet set = new AnimatorSet();
-		ViewUtils.setHardwareLayer(mCardHolder);
-		ObjectAnimator translateAnim = ObjectAnimator.ofFloat(mCardHolder, "translationX", -mCardHolder.getLeftOffset());
-		translateAnim.setDuration(500);
-
-		ObjectAnimator alphaOut = ObjectAnimator.ofFloat(mCardHolder.getCardField(), "alpha", 0.0f);
-		alphaOut.setDuration(500);
-		alphaOut.addListener(new AnimatorListenerAdapter() {
-			@Override
-			public void onAnimationEnd(Animator anim) {
-				mCardHolder.getCardField().setVisibility(View.GONE);
-				ViewUtils.setLayerTypeNone(mCardHolder);
-			}
-		});
-
-        /*
-		// ALPHA IN OTHER FIELDS
-		mExtraFields.setVisibility(View.VISIBLE);
-		ObjectAnimator alphaIn = ObjectAnimator.ofFloat(mExtraFields, "alpha", 1.0f);
-		alphaIn.setDuration(500);
-		set.playTogether(translateAnim, alphaOut, alphaIn);
-		set.start();
-		*/
-
 		mExpirationEditText.requestFocus();
 	}
 	
