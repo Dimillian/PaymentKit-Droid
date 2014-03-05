@@ -1,10 +1,12 @@
 package com.paymentkit.views;
 
+import android.app.Activity;
 import android.content.Context;
 import android.text.InputFilter;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.OvershootInterpolator;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -71,6 +73,11 @@ public class FieldHolder extends RelativeLayout {
             return this.mCVVEditText.getText().toString();
         }
         return null;
+    }
+
+    public void requestCardNumberFocus(Activity activity) {
+        this.mCardHolder.getCardField().requestFocus();
+        activity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
     }
 
 	private void setup() {

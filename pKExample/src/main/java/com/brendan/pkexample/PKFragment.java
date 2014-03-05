@@ -61,6 +61,7 @@ public class PKFragment extends Fragment {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		setupViews();
+        this.mFieldHolder.requestCardNumberFocus(getActivity());
 	}
 
 }
