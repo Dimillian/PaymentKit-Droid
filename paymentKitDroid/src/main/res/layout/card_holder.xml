@@ -6,7 +6,7 @@
 		android:id="@+id/credit_card_no"
 		android:layout_width="wrap_content"
 		android:layout_height="50dp"
-		android:layout_gravity="center_vertical"
+		android:layout_gravity="center_vertical|center_horizontal"
 		android:hint="1234 5678 9012 3456"
 		android:textSize="@dimen/checkout_input_field_text_size"
 		android:maxLength="19" />
