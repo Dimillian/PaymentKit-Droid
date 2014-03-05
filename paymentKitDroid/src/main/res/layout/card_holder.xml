@@ -11,17 +11,4 @@
 		android:textSize="@dimen/checkout_input_field_text_size"
 		android:maxLength="19" />
 
-	<com.paymentkit.views.InterceptEditText
-		style="@style/CheckoutAddCardField"
-		android:id="@+id/last_four_digits"
-		android:editable="false"
-		android:focusable="false"
-		android:inputType="none"
-		android:layout_width="fill_parent"
-		android:layout_height="50dp"
-		android:layout_gravity="center_vertical"
-		android:maxLength="19"
-		android:textSize="@dimen/checkout_input_field_text_size"
-		android:visibility="gone" />
-
 </merge>

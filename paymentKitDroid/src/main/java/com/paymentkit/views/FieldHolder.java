@@ -40,23 +40,7 @@ public class FieldHolder extends RelativeLayout {
 	private CVVEditText mCVVEditText;
 	private CardIcon mCardIcon;
 	private LinearLayout mExtraFields;
-	
-	public enum InputStyle { 
-		GINGERBREAD(R.drawable.edit_text), ICS_HOLO_LIGHT(R.drawable.edit_text_holo_light);
-		
-		int resId;
-		
-		InputStyle(int resId) {
-			this.resId = resId;
-		}
-		
-		int getResId() {
-			return resId;
-		}
-		
-	};
-	private InputStyle mInputStyle = InputStyle.ICS_HOLO_LIGHT;
-	
+
 	public FieldHolder(Context context) {
 		super(context);
 		setup();
@@ -89,14 +73,6 @@ public class FieldHolder extends RelativeLayout {
         return null;
     }
 
-	/*
-	 * Determines background style of the FieldHolder
-	 */
-	public void setInputStyle(InputStyle inputStyle) {
-		mInputStyle = inputStyle;
-		setNecessaryFields();
-	} 
-	
 	private void setup() {
 		LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.field_holder, this, true);
@@ -110,7 +86,6 @@ public class FieldHolder extends RelativeLayout {
 	}
 	
 	private void setupViews() {
-		setExtraFieldsAlpha();
 		setCardEntryListeners();
 		setNecessaryFields();
 	}
@@ -119,15 +94,8 @@ public class FieldHolder extends RelativeLayout {
 		setFocusable(true);
 		setFocusableInTouchMode(true);
 		setClipChildren(false);
-		setBackgroundDrawable(getResources().getDrawable(mInputStyle.getResId()));
 	}
-	
-	private void setExtraFieldsAlpha() {
-		ObjectAnimator setAlphaZero = ObjectAnimator.ofFloat(mExtraFields, "alpha", 0.0f);
-		setAlphaZero.setDuration(0);
-		setAlphaZero.start();
-		mExtraFields.setVisibility(View.GONE);
-	}
+
 
 	private void setCardEntryListeners() {
 		mExpirationEditText.setCardEntryListener(mCardEntryListener);
@@ -165,12 +133,14 @@ public class FieldHolder extends RelativeLayout {
 			}
 		});
 
+        /*
 		// ALPHA IN OTHER FIELDS
 		mExtraFields.setVisibility(View.VISIBLE);
 		ObjectAnimator alphaIn = ObjectAnimator.ofFloat(mExtraFields, "alpha", 1.0f);
 		alphaIn.setDuration(500);
 		set.playTogether(translateAnim, alphaOut, alphaIn);
 		set.start();
+		*/
 
 		mExpirationEditText.requestFocus();
 	}
@@ -228,7 +198,6 @@ public class FieldHolder extends RelativeLayout {
 				@Override
 				public void onAnimationEnd(Animator anim) {
 					mExtraFields.setVisibility(View.GONE);
-					mCardHolder.destroyOverlay();
 					mCardHolder.getCardField().requestFocus();
 					mCardHolder.getCardField().setSelection(mCardHolder.getCardField().length());
 				}

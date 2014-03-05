@@ -58,7 +58,7 @@
     <com.paymentkit.views.FieldHolder
         android:id="@+id/field_holder"
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:layout_below="@id/accepted_cards"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp">

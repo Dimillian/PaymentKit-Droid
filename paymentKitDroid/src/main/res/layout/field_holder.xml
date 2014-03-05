@@ -11,11 +11,11 @@
         android:contentDescription="Credit Card Number Field" />
 
     <com.paymentkit.views.CardIcon
+        android:layout_marginTop="10dp"
         android:id="@+id/card_icon"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
         android:layout_marginLeft="0dp"
         android:scaleType="centerInside"
         android:src="@drawable/checkout_default_card" />
@@ -24,9 +24,9 @@
         android:id="@+id/extra_fields"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:orientation="horizontal" >
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="55dp">
 
         <com.paymentkit.views.ExpirationEditText
             android:id="@+id/expiration"

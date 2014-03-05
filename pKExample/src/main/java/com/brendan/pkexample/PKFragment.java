@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import com.paymentkit.util.ToastUtils;
 import com.paymentkit.util.ViewUtils;
 import com.paymentkit.views.FieldHolder;
-import com.paymentkit.views.FieldHolder.InputStyle;
 
 /**
  * 
@@ -55,9 +54,6 @@ public class PKFragment extends Fragment {
 		float marginLeft = 1.0f - INPUT_WIDTH;
 		ViewUtils.setMarginLeft(mAcceptedCardsImg, (int) (marginLeft * ViewUtils.getScreenWidth(getActivity())));
 		ViewUtils.setWidth(mFieldHolder, (int) (INPUT_WIDTH * ViewUtils.getScreenWidth(getActivity())));
-		if(Build.VERSION.SDK_INT < 14) {
-			mFieldHolder.setInputStyle(InputStyle.GINGERBREAD);
-		}
 	}
 
 	/* After onCreateView is called */

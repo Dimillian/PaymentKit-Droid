@@ -25,7 +25,6 @@ public class CardNumHolder extends RelativeLayout {
 	private static final int SHAKE_DURATION = 400;
 
 	private CardNumEditText mCardNumberEditText;
-	private InterceptEditText mLastFourDigits;
 	private float mLeftOffset;
 	private CardEntryListener mCardEntryListener;
 	private View mTopItem;
@@ -54,8 +53,6 @@ public class CardNumHolder extends RelativeLayout {
 		LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.card_holder, this, true);
 		mCardNumberEditText = (CardNumEditText) findViewById(R.id.credit_card_no);
-		mLastFourDigits = (InterceptEditText) findViewById(R.id.last_four_digits);
-		mTopItem = mLastFourDigits;
 	}
 
 	public boolean isCardNumValid() {
@@ -81,14 +78,6 @@ public class CardNumHolder extends RelativeLayout {
 	public void setCardEntryListener(CardEntryListener listener) {
 		mCardEntryListener = listener;
 		mCardNumberEditText.setCardEntryListener(listener);
-		mLastFourDigits.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (mIsClickable) {
-					mCardEntryListener.onCardNumberInputReEntry();
-				}
-			}
-		});
 	}
 
 	@Override
@@ -126,19 +115,10 @@ public class CardNumHolder extends RelativeLayout {
 		// create 4 digits
 		String str = mCardNumberEditText.getText().toString();
 		String last4Digits = str.substring(str.length() - 4, str.length());
-		mLastFourDigits.setText(last4Digits);
 		Paint textPaint = mCardNumberEditText.getPaint();
 		float fullWidth = textPaint.measureText(mCardNumberEditText.getText().toString());
 		float fourDigitsWidth = textPaint.measureText(last4Digits);
 		mLeftOffset = fullWidth - fourDigitsWidth;
-		ViewUtils.setMarginLeft(mLastFourDigits, (int) mLeftOffset);
-		// align digits on right
-		mLastFourDigits.setTextColor(Color.DKGRAY);
-		mLastFourDigits.setVisibility(View.VISIBLE);
-	}
-
-	public void destroyOverlay() {
-		mLastFourDigits.setVisibility(View.GONE);
 	}
 
 	public float getLeftOffset() {
